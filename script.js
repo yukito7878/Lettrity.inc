@@ -19,3 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
         lastScrollY = currentScrollY; // 現在のスクロール位置を記録
     });
 });
+
+
+document.getElementById('hamburger').addEventListener('click', function () {
+    const navbar = document.getElementById('navbar');
+    navbar.classList.toggle('active'); // メニューの表示/非表示を切り替える
+});

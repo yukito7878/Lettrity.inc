@@ -11,8 +11,13 @@
         <div class="logo">
             <img src="img/レトリティ_removeBg.png" alt="会社のロゴ" class="company-logo">
             <a href="#home">株式会社レトリティ</a>
+            <button class="hamburger" id="hamburger">
+        		<span></span>
+        		<span></span>
+        		<span></span>
+    		</button>
         </div>
-        <nav class="navbar">
+        <nav class="navbar" id="navbar">
             <ul>
                 <li><a href="#about">会社概要</a></li>
                 <li><a href="#new-philosophy">企業理念</a></li>
@@ -26,26 +31,9 @@
             <img src="img/employees.png" alt="従業員が写ったオフィスの画像" class="hero-bg">
             <h1>株式会社レトリティ</h1>
             <p>未来のリーダーを育成し、世の中の「よりよい」を生み出す</p>
-            <a href="#contact" class="button">お問い合わせ</a>
+            <!--<a href="#contact" class="button">お問い合わせ</a> -->
         </section>
-<!-- 
-        <section id="philosophy" class="philosophy">
-            <h2>ビジョン・企業理念</h2>
-            <h3>未来のリーダーを育成し、世の中の「よりよい」を生み出す</h3>
-            <div class="philosophy-item1">
-                <h4>リーダーを育成</h4>
-                <p>私たちは「人材」を「人財」と考え、1人1人がこれからの日本の未来を担えるような「リーダー」を育成し、大きな可能性に向かって共に精進します。</p>
-            </div>
-            <div class="philosophy-item2">
-                <h4>未来を創造</h4>
-                <p>今の世の中にないサービスや、今後起こるであろう日本の不安や事象を解決する機関として、「便利」「必要」を創造します。</p>
-            </div>
-            <div class="philosophy-item3">
-                <h4>「ありがとう」のその先へ</h4>
-                <p>私たちはお客様を第一に考え、弊社の最大限の価値を提供し、感謝されることは大前提。私たちのサービスや企業がないといけないような存在を目指します。</p>
-            </div>
-        </section>
--->
+
 		<section id="new-philosophy" class="new-philosophy">
 			<h2>ビジョン・企業理念</h2>
             <h3>未来のリーダーを育成し、世の中の「よりよい」を生み出す</h3>
@@ -76,59 +64,29 @@
         		</div>
     		</div>
 		</section>
-		
-<!-- 水平の企業理念 
-		<section id="new-philosophy-horizon" class="new-philosophy-horizon">
-			<h2>ビジョン・企業理念</h2>
-            <h3>未来のリーダーを育成し、世の中の「よりよい」を生み出す</h3>
-    		<div class="new-philosophy-item-horizon">
-        		
-        		<div class="philosophy-box-horizon" style="background-image: url('img_rinen/blue.png');">
-            		<div class="philosophy-content-horizon philosophy-content1-horizon">
-                		<h4>リーダーを育成</h4>
-                		<p>私たちは「人材」を「人財」と考え、1人1人がこれからの日本の未来を担えるような「リーダー」を育成し、大きな可能性に向かって共に精進します。</p>
-            		</div>
-        		</div>
-        		
-        		<div class="philosophy-box-horizon" style="background-image: url('img_rinen/red.png');">
-            		<div class="philosophy-content-horizon philosophy-content2-horizon">
-                		<h4>未来を創造</h4>
-                		<p>今の世の中にないサービスや、今後起こるであろう日本の不安や事象を解決する機関として、「便利」「必要」を創造します。</p>
-            		</div>
-        		</div>
-        		
-        		<div class="philosophy-box-horizon" style="background-image: url('img_rinen/purple.png');">
-            		<div class="philosophy-content-horizon philosophy-content3-horizon">
-                		<h4>「ありがとう」<br>のその先へ</h4>
-                		<p>私たちはお客様を第一に考え、弊社の最大限の価値を提供し、感謝されることは大前提。私たちのサービスや企業がないといけないような存在を目指します。</p>
-            		</div>
-       			</div>
-    		</div>
-		</section>
--->
 
         <section id="company-links" class="company-links">
-            <h2>関連リンク</h2>
+            <h2>事業内容</h2>
             <ul class="list-links">
                 <li>
-                    <a href="./company/">
+                    <a href="#about">
                         <img src="img/レトリティ_removeBg.png" alt="会社概要">
-                        <p>株式会社レトリティ</p>
-                        <p>すべての人を輝かせ、未来を共に創り出し、常識を変えていく</p>
+                        <p class="company-name">会社概要</pclass>
+                        <p><br>すべての人を輝かせ、未来を共に創り出し、常識を変えていく</p>
                     </a>
                 </li>
                 <li>
                     <a href="http://www.kaitori-daikichi.jp/" target="_blank">
-                        <img src="img/レトリティ_removeBg.png" alt="買取専門店 大吉">
-                        <p>買取スマート</p>
-                        <p>金・貴金属・切手・ブランドの買取専門店『買取大吉』OFFICIAL SITE</p>
+                        <img src="img/smartLogo.png" alt="買取専門店 大吉">
+                        <p class="company-name">買取スマート</p>
+                        <p><br>日本最大規模の全国出張買取を展開<br>過去34,000件の買取実績あり</p>
                     </a>
                 </li>
                 <li>
                     <a href="http://www.kaitori-daikichi.jp/fc/" target="_blank">
-                        <img src="img/レトリティ_removeBg.png" alt="FCフランチャイズ加盟店大募集">
-                        <p>買取○○</p>
-                        <p>フランチャイズ募集・FC加盟・独立・企業の支援サイトはこちら</p>
+                        <img src="img/marumaruLogo.png" alt="FCフランチャイズ加盟店大募集">
+                        <p class="company-name">貴金属専門◯◯◯◯</p>
+                        <p>貴金属のみの出張買取サービス<br>ご自宅で、金査定<br>どこよりも最高値で買取いたします</p>
                     </a>
                 </li>
             </ul>
