@@ -30,6 +30,29 @@ body {
     transition: transform 0.3s ease-in-out; /* スムーズなアニメーション */
 }
 
+/* ハンバーガーボタン */
+.hamburger {
+    display: none; /* 初期状態では非表示（PC向け） */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 20;
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+}
+
+
 .hidden {
     transform: translateY(-100%); /* ヘッダーを画面外に移動 */
 }
@@ -230,10 +253,32 @@ th {
     margin: 0;
 }
 
+@media (min-width: 768px) {
+    .new-philosophy-item {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 2列グリッド */
+        grid-template-areas:
+            "center center"
+            "left right";
+    }
+    .new-philosophy-item > div:nth-child(1) {
+        grid-area: center; /* 上段中央 */
+        justify-self: center;
+    }
+    .new-philosophy-item > div:nth-child(2) {
+        grid-area: left; /* 下段左 */
+        justify-self: end; /* 中央寄りに配置 */
+    }
+    .new-philosophy-item > div:nth-child(3) {
+        grid-area: right; /* 下段右 */
+        justify-self: start; /* 中央寄りに配置 */
+    }
+}
+
 /*各セクションの共通デザイン*/
 
-section h2 {
-    font-size: 2.5rem !important;
+section > h2 {
+    font-size: 2.5rem;
     color: #333;
     margin-bottom: 1.5rem;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* 見出しに軽い影を追加 */
@@ -256,9 +301,14 @@ section h3 {
     background: linear-gradient(135deg, #f8f9fa, #e9ecef); /* グラデーション背景 */
 }
 
-.company-links h2 {
-    font-size: 24px;
+.company-links > h2 {
+    font-size: 2.5rem;
     margin-bottom: 20px;
+}
+
+.company-links .company-name {
+    font-weight: bold !important;
+    font-size: 24px;
 }
 
 .list-links {
@@ -357,7 +407,6 @@ section h3 {
 	width: 100%;
 }
 
-
 .philosophy-content1 h4,.philosophy-content2 h4,.philosophy-content3 h4 {
     font-size: 1.3rem;
     font-weight: bold;
@@ -379,96 +428,6 @@ section h3 {
     line-height: 1.5;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
-
-/* 三角形のレイアウト */
-@media (min-width: 768px) {
-    .new-philosophy-item {
-        display: grid;
-        grid-template-columns: 1fr 1fr; /* 2列グリッド */
-        grid-template-areas:
-            "center center"
-            "left right";
-    }
-    .new-philosophy-item > div:nth-child(1) {
-        grid-area: center; /* 上段中央 */
-        justify-self: center;
-    }
-    .new-philosophy-item > div:nth-child(2) {
-        grid-area: left; /* 下段左 */
-        justify-self: end; /* 中央寄りに配置 */
-    }
-    .new-philosophy-item > div:nth-child(3) {
-        grid-area: right; /* 下段右 */
-        justify-self: start; /* 中央寄りに配置 */
-    }
-}
-
-/*水平方向バージョンの企業理念*/
-.new-philosophy-horizon {
-    text-align: center;
-    margin: auto;
-    padding: 2rem;
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-    margin: 1rem auto;
-    padding: 3rem 1rem; /* 全体に余白を追加 */
-    border-radius: 8px;
-}
-
-.new-philosophy-item-horizon {
-    display: flex; /* フレックスボックスを使用して水平配置 */
-    justify-content: space-around; /* 子要素を均等に配置 */
-    align-items: center; /* 垂直方向の中央揃え */
-    gap: 2rem; /* 子要素の間隔を設定 */
-}
-
-.philosophy-box-horizon {
-    position: relative;
-    width: 350px;
-    height: 350px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: black;
-}
-
-.philosophy-content-horizon {
-    position: relative;
-    width: 80%;
-    padding: 1.5rem;
-    border-radius: 8px;
-    text-align: center;
-    font-size: 0.8rem;
-}
-
-.philosophy-content1-horizon h4,
-.philosophy-content2-horizon h4,
-.philosophy-content3-horizon h4 {
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    color: #007bff;
-}
-
-.philosophy-content2-horizon h4{
-	color: red;
-}
-
-.philosophy-content3-horizon h4{
-	color: slateblue;
-}
-
-.philosophy-content-horizon p {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-
 
 /* お問い合わせセクション */
 .contact {
@@ -554,103 +513,217 @@ section h3 {
     margin-top: 2rem;
     font-size: 0.9rem;
 }
-
-/* スマホ用スタイル */
+/* スマホ用のスタイル */
 @media (max-width: 768px) {
-    /* 全体 */
-    body {
-        font-size: 14px; /* フォントサイズを少し小さく */
-    }
-
     /* ヘッダー */
     .header {
-        flex-direction: column; /* ヘッダーの要素を縦に並べる */
-        text-align: center;
+        padding: 0.4rem 1rem;
+        flex-direction: column; /* 縦に配置 */
+    }
+    
+    .hero-bg {
+    	position: absolute;
+    	padding-top: 70px;
+    	top: 0;
+    	left: 0;
+    	width: 100%;
+    	height: 100%;
+    	object-fit: cover; /* 画像がセクション全体に収まる */
+    	z-index: 1;
+    	opacity: 0.5; /* 背景を暗くするための透明度 */
+	}
+
+	.hero h1,
+	.hero p {
+		margin-top:0;
+		font-weight: bold;
+    	position: relative;
+    	z-index: 2;
+    	margin-bottom:0;
+	}
+
+	.hero h1 {
+		margin-top: 100px;
+    	font-size: 4rem;
+    	font-weight:bold;
+    	color: black;
+	}
+
+	.hero p {
+		margin-top: 20px;
+    	font-size: 2rem;
+    	color: black;
+	}
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #333;
         padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar.active {
+        display: flex; /* ハンバーガーメニューで表示 */
+    }
+
+    .hamburger {
+        display: flex; /* ハンバーガーボタンを表示 */
     }
 
     .logo {
-        margin: 0 auto;
+        margin-left: 0;
+        justify-content: center;
     }
 
     .navbar ul {
-        flex-direction: column; /* メニューを縦に並べる */
-        margin-top: 1rem;
+        flex-direction: column; /* 縦に並べる */
+        align-items: center;
+        gap: 10px;
     }
 
     .navbar li {
-        margin: 0.5rem 0; /* メニューの間隔 */
+        margin-left: 0;
     }
 
     /* ヒーローセクション */
     .hero {
-        height: 500px; /* ヒーローセクションの高さを調整 */
-        padding: 1rem;
+        height: auto; /* 高さを可変に */
+        padding: 2rem 1rem;
     }
 
     .hero h1 {
-        font-size: 2rem; /* タイトルを少し小さく */
+        font-size: 2.5rem;
     }
 
     .hero p {
-        font-size: 1rem; /* テキストを小さく */
+        font-size: 1.5rem;
     }
 
-    /* セクション共通 */
+    .hero .button {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+
+    /* セクション */
     section {
-        padding: 1rem; /* セクションの内側余白を調整 */
-    }
-
-    section h2 {
-        font-size: 1.8rem; /* 見出しを少し小さく */
-    }
-
-    /* 会社概要 */
-    .about {
         padding: 1rem;
     }
 
-    .about > * {
-        margin-right: 0; /* 余白をリセット */
-        margin-left: 0;
+    section h2 {
+        font-size: 1.8rem !important;
     }
 
-    /* テーブル */
+    section h3 {
+        font-size: 1.2rem;
+    }
+
+    /* 会社概要のテーブル */
     table {
-        font-size: 12px; /* テーブル内フォントを小さく */
-        width: 100%; /* テーブルを画面幅いっぱいに */
+        font-size: 0.9rem;
     }
 
     th, td {
         padding: 0.5rem;
+        word-break: break-word; /* 内容を折り返す */
     }
 
-    /* 企業理念 */
-    .philosophy-item {
-        max-width: 100%; /* カード幅を画面幅に合わせる */
-        margin-bottom: 1rem;
+    /* 新企業理念セクション */
+    .new-philosophy > h2{
+		font-size: 33px !important;
+	}
+    
+    .new-philosophy-item {
+        grid-template-columns: 1fr; /* 1列表示 */
+        grid-template-areas:
+            "center"
+            "left"
+            "right";
+        row-gap: 10px;
     }
+   
+	.philosophy-content {
+    	position: relative;
+    	width: 70%;
+    	padding: 0rem;
+    	border-radius: 8px;
+    	text-align: center;
+	}
+	
+    .philosophy-box {
+        width: 270px; /* 幅を100%に */
+        height: 270px; /* 高さ可変 */
+        margin: auto;
+    }
+    
+    .philosophy-content1 h4,.philosophy-content2 h4,.philosophy-content3 h4 {
+    	font-size: 1.05rem;
+    	font-weight: bold;
+    	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    	
+	}
+
+	.philosophy-content p {
+    	font-size: 0.7rem;
+    	line-height: 1.2;
+    	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	}
 
     /* 関連リンク */
     .list-links {
-        flex-direction: column; /* リンクを縦に並べる */
+        flex-direction: column; /* 縦に並べる */
+        gap: 10px; /* 間隔を調整 */
     }
+    
+    .company-links {
+    text-align: center;
+    margin: 1rem auto;
+    padding: 3rem 1rem; /* セクションの内側余白 */
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef); /* グラデーション背景 */
+}
+
+	.company-links h2 {
+	    font-size: 20px;
+    	margin-bottom: 20px;
+	}
+
+	.company-links .company-name {
+    	font-weight: bold !important;
+    	font-size: 18px;
+	}
+
+	.list-links li p {
+    	margin: 10px;
+    	font-size: 13px;
+    	color: white;
+	}
 
     .list-links li {
-        width: 100%; /* カード幅を調整 */
+        width: 80%; /* 幅を100%に */
+        margin: auto;
+    }
+
+    .list-links li img {
+        width: 50%; /* 画像のサイズ調整 */
     }
 
     /* お問い合わせ */
     .contact-methods {
-        flex-direction: column; /* カードを縦に並べる */
+        flex-direction: column; /* 縦に並べる */
+        gap: 20px;
     }
 
     .contact-method {
-        max-width: 100%;
+        max-width: 100%; /* 幅を親要素に合わせる */
     }
 
     /* フッター */
     .footer {
-        font-size: 0.8rem; /* フォントを少し小さく */
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem;
     }
 }
