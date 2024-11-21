@@ -453,7 +453,13 @@ section h3 {
 	width: 80%;
 }
 
+<<<<<<< HEAD
 
+=======
+.assesment-button{
+	margin-top: 20px;
+}
+>>>>>>> be379bd23d3364fbe73cc3cc1381a9d239039d90
 
 #assesment-link {
     text-align: center;
