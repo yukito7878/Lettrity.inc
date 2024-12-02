@@ -8,7 +8,7 @@
 /* ボディの基本スタイル */
 body {
 	
-	background-image: url('../img/webBackground.png'); /* 生成した背景画像をここに適用 */
+	background-image: url('../img/backGround.png'); /* 生成した背景画像をここに適用 */
     background-size: cover; /* 画面全体に背景画像をフィット */
     background-position: center; /* 背景を中央に配置 */
     background-attachment: fixed; /* スクロールしても背景を固定 */
