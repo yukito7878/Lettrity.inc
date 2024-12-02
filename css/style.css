@@ -57,7 +57,7 @@ body {
 .hamburger span {
     display: block;
     width: 30px;
-    height: 3px;
+    height: 5px;
     background-color: white;
     border-radius: 2px;
 }
@@ -76,12 +76,12 @@ body {
 }
 
 .logo .company-logo{
-	height: 70px;
+	height: 100px;
 }
 
 .logo a {
     color: #fff;
-    font-size: 1rem;
+    font-size: 1.4rem;
     text-decoration: none;
     align-items: center;
 }
@@ -106,7 +106,7 @@ body {
 .navbar a {
     color: #fff;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.15rem;
     white-space: nowrap; /* テキストが折り返されないようにする */
 }
 
