@@ -206,6 +206,7 @@ section p {
     text-align: center;
     background: linear-gradient(135deg, #f8f9fa, #e9ecef); /* グラデーション背景 */
     
+    
 }
 .about > *{
 	margin-right: 10%;
@@ -215,6 +216,8 @@ section p {
 table {
     border-collapse: collapse;
     margin-top: 1rem;
+    width: 70% !important;
+    margin: auto;
 }
 
 th, td {
@@ -669,13 +672,15 @@ section h3 {
     }
 
     section h3 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     /* 会社概要のテーブル */
     table {
         font-size: 0.9rem;
+        width: 90% !important;
     }
+
 
     th, td {
         padding: 0.5rem;
