@@ -31,7 +31,7 @@ body {
     width: 100%;
     background-color: #333; /* 背景色 */
     color: #fff; /* テキスト色 */
-    padding: 0.4rem 2rem; /* 上下左右の余白 */
+    padding: 0 2rem; /* 上下左右の余白 */
     font-weight: bold; /* 太字 */
     display: flex;
     justify-content: space-between; /* 左右の要素を均等配置 */
@@ -76,7 +76,8 @@ body {
 }
 
 .logo .company-logo {
-    height: 100px; /* ロゴの高さ */
+    height: 70px; /* ロゴの高さ */
+    padding:10px 0;
 }
 
 .logo a {
