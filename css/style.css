@@ -635,6 +635,10 @@ td {
         flex-direction: column;
         margin-bottom: 10px;
     }
+    
+    table tr.siten{
+		margin-bottom: 0px;
+	}
 }
 
 /* フッター */
