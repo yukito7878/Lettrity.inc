@@ -652,6 +652,10 @@ td {
 }
 /* スマホ用のスタイル */
 @media (max-width: 768px) {
+	body {
+    background-color: white;
+
+}
     /* ヘッダー */
     .header {
         padding: 0.4rem 1rem;
