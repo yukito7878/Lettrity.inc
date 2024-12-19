@@ -184,17 +184,19 @@ section {
 
 section h2 {
     font-size: 2rem;
-    color: #e60000;
+    color: black;
     margin-bottom: 1rem;
     border-bottom: 2px solid #e60000;
     display: inline-block;
     padding-bottom: 0.5rem;
+    text-align: center;
 }
 
 section p {
     font-size: 1rem;
     margin-bottom: 1rem;
     line-height: 1.8;
+    text-align: center;
 }
 
 /* 会社概要のスタイル */
@@ -298,19 +300,20 @@ th {
 
 /*各セクションの共通デザイン*/
 
-section > h2 {
+section  h2, div h2{
     font-size: 2.5rem;
     color: #333;
     margin-bottom: 1.5rem;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* 見出しに軽い影を追加 */
 }
 
-section h3 {
+section h3, div h3 {
     font-size: 1.8rem;
     color:#555;
     margin-top: 10px;
     margin-bottom: 30px;
     font-family: "Yu Mincho", "Hiragino Mincho Pro", "IPA明朝", "MS PMincho", serif;
+    text-align: center !important;
     
 }
 
@@ -565,6 +568,14 @@ section h3 {
 
 .contact-method .button:hover {
     background-color: rgb(0, 0, 64); /* ホバー時の背景色変更 */
+}
+
+.company-section{
+	text-align: center;
+}
+
+.company-section{
+	transition: background-color 0.3s ease; /* 背景色のアニメーション */
 }
 
 #about {
