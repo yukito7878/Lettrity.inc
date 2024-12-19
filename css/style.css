@@ -351,6 +351,7 @@ section h3, div h3 {
     overflow: hidden;
     width: 350px;
     text-align: center;
+    margin: auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
