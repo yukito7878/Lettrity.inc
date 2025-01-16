@@ -1,0 +1,102 @@
+/* フェードインアニメーション */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* 下からスライドアップ */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* スライドインアニメーション */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px); /* 左からスライドイン */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 初期状態 */
+.slide-in {
+    opacity: 0;
+    transform: translateX(-50px); /* 左に隠れている状態 */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition-delay: var(--delay, 0.2s); /* 遅延時間をカスタマイズ可能 */
+}
+
+/* 表示状態 */
+.slide-in.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in2 {
+    opacity: 0;
+    transform: translateX(-50px); /* 左に隠れている状態 */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition-delay: var(--delay, 0.4s); /* 遅延時間をカスタマイズ可能 */
+}
+
+/* 表示状態 */
+.slide-in2.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in3 {
+    opacity: 0;
+    transform: translateX(-50px); /* 左に隠れている状態 */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition-delay: var(--delay, 0.6s); /* 遅延時間をカスタマイズ可能 */
+}
+
+/* 表示状態 */
+.slide-in3.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* アニメーションを適用する初期状態 */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    transition-delay: var(--delay, 0.2s); /* 遅延時間をカスタマイズ可能 */
+}
+
+/* 表示状態 */
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in2 {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    transition-delay: var(--delay, 0.4s); /* 遅延時間をカスタマイズ可能 */
+}
+
+/* 表示状態 */
+.fade-in2.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.fade-in3 {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    transition-delay: var(--delay, 0.6s); /* 遅延時間をカスタマイズ可能 */
+}
+
+/* 表示状態 */
+.fade-in3.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

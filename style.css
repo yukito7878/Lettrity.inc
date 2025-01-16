@@ -1,0 +1,804 @@
+/* 全体のリセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ボディの基本スタイル */
+body {
+	
+	background-image: url('../img/backGround.png'); /* 生成した背景画像をここに適用 */
+    background-size: cover; /* 画面全体に背景画像をフィット */
+    background-position: center; /* 背景を中央に配置 */
+    background-attachment: fixed; /* スクロールしても背景を固定 */
+    background-repeat: no-repeat; /* 画像を繰り返さない */
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #B3E5FC;
+
+}
+
+
+/* --- ヘッダー全体のスタイル --- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333; /* 背景色 */
+    color: #fff; /* テキスト色 */
+    padding: 0 2rem; /* 上下左右の余白 */
+    font-weight: bold; /* 太字 */
+    display: flex;
+    justify-content: space-between; /* 左右の要素を均等配置 */
+    align-items: center; /* 垂直方向の中央揃え */
+    z-index: 10; /* ヘッダーが最前面に表示されるように設定 */
+    transition: transform 0.3s ease-in-out; /* スムーズなアニメーション */
+}
+
+/* --- ハンバーガーボタン --- */
+.hamburger {
+    display: none; /* 初期状態で非表示（PC向け） */
+    flex-direction: column;
+    justify-content: space-around; /* 縦方向に均等配置 */
+    width: 30px; /* ボタンの幅 */
+    height: 25px; /* ボタンの高さ */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 20; /* ヘッダーより上に配置 */
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 5px;
+    background-color: white; /* 線の色 */
+    border-radius: 2px; /* 丸みを追加 */
+}
+
+/* --- ヘッダーの非表示状態 --- */
+.hidden {
+    transform: translateY(-100%); /* ヘッダーを画面外に移動 */
+}
+
+/* --- ロゴ部分のスタイル --- */
+.logo {
+    display: flex;
+    align-items: center; /* 垂直方向の中央揃え */
+    gap: 20px; /* アイテム間の余白 */
+    margin-left: 7%; /* 左側のマージン */
+}
+
+.logo .company-logo {
+    height: 70px; /* ロゴの高さ */
+    padding:10px 0;
+}
+
+.logo a {
+    color: #fff; /* テキスト色 */
+    font-size: 1.4rem; /* テキストサイズ */
+    text-decoration: none; /* 下線を削除 */
+}
+
+/* --- ナビゲーション部分 --- */
+.navbar {
+    margin-right: 30%; /* 右側のマージン */
+    flex-shrink: 0; /* 幅が縮小されないように設定 */
+    min-width: 200px; /* 最低幅を設定 */
+}
+
+.navbar ul {
+    list-style: none; /* リストマーカーを削除 */
+    display: flex; /* フレックスレイアウト */
+}
+
+.navbar li {
+    margin-left: 2rem; /* リスト間の間隔 */
+}
+
+.navbar a {
+    color: #fff; /* テキスト色 */
+    text-decoration: none; /* 下線を削除 */
+    font-size: 1.15rem; /* テキストサイズ */
+    white-space: nowrap; /* 折り返しを防止 */
+}
+
+/* ヒーローセクション */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 700px; /* 高さを固定 */
+    margin: 0 auto; /* セクションを中央に配置 */
+    color: #fff;
+    text-align: center;
+    overflow: hidden; /* 背景画像のはみ出しを隠す */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.hero-bg {
+    position: absolute;
+    padding-top: 30px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 画像がセクション全体に収まる */
+    z-index: 1;
+    opacity: 0.5; /* 背景を暗くするための透明度 */
+}
+
+.hero h1,
+.hero p,
+.hero .button {
+	margin-top: 30px;
+	font-weight: bold;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    color: black;
+    font-family: "Yu Mincho", "Hiragino Mincho Pro", "IPA明朝", "MS PMincho", serif;
+}
+
+.hero p {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: black;
+    font-family: "Yu Mincho", "Hiragino Mincho Pro", "IPA明朝", "MS PMincho", serif;
+}
+
+.hero .button {
+    background-color: #e60000;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+
+
+/* セクション共通 */
+section {
+    padding: 2rem 2rem;
+    margin: 1rem auto;
+    max-width: 1200px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    font-size: 2rem;
+    color: #e60000;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e60000;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+section p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+/* 会社概要のスタイル */
+.about{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef); /* グラデーション背景 */
+    
+    
+}
+.about > *{
+	margin-right: 10%;
+	margin-left: 10%;
+}
+
+table {
+    border-collapse: collapse;
+    margin-top: 1rem;
+    width: 70% !important;
+    margin: auto;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid black;
+    background-color: white;
+}
+
+th {
+    background-color: #f2f2f2;
+    width: 30%;
+}
+
+/* 企業理念の項目 */
+.philosophy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 1rem auto;
+    padding: 3rem 1rem; /* 全体に余白を追加 */
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef); /* グラデーション背景 */
+    border-radius: 10px; /* 角を少し丸める */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 軽いシャドウ効果 */
+    max-width: 1200px;
+}
+
+.philosophy-item {
+    background-color: #fff; /* 各アイテムにカード風の背景 */
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px; /* 角を丸める */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 軽いシャドウ効果 */
+    max-width: 800px; /* 読みやすい幅に制限 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* ホバー時のアニメーション */
+}
+
+.philosophy-item:hover {
+    transform: translateY(-5px); /* ホバーで少し浮く */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* ホバーで影を強調 */
+}
+
+.philosophy-item h4 {
+    font-size: 1.5rem;
+    color: #007bff; /* 見出しをアクセントカラーに */
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.philosophy-item p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .new-philosophy-item {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 2列グリッド */
+        grid-template-areas:
+            "center center"
+            "left right";
+    }
+    .new-philosophy-item > div:nth-child(1) {
+        grid-area: center; /* 上段中央 */
+        justify-self: center;
+    }
+    .new-philosophy-item > div:nth-child(2) {
+        grid-area: left; /* 下段左 */
+        justify-self: end; /* 中央寄りに配置 */
+    }
+    .new-philosophy-item > div:nth-child(3) {
+        grid-area: right; /* 下段右 */
+        justify-self: start; /* 中央寄りに配置 */
+    }
+}
+
+/*各セクションの共通デザイン*/
+
+section > h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* 見出しに軽い影を追加 */
+}
+
+section h3 {
+    font-size: 1.8rem;
+    color:#555;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-family: "Yu Mincho", "Hiragino Mincho Pro", "IPA明朝", "MS PMincho", serif;
+    
+}
+
+/*三つの要素を並べる（買取スマート、買取○○、レトリティ）*/
+.company-links {
+    text-align: center;
+    margin: 1rem auto;
+    padding: 3rem 1rem; /* セクションの内側余白 */
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef); /* グラデーション背景 */
+}
+
+.company-links > h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.company-links .company-name {
+    font-weight: bold !important;
+    font-size: 24px;
+}
+
+.list-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list-links li {
+    background: #334670;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.list-links li div{
+	width: 65%;
+	margin: auto;
+	aspect-ratio: 1 / 1; /* 横:縦の比率を1:1（正方形）に設定 */
+	display: grid;
+    place-items: center; /* 水平・垂直の両方向で中央揃え */
+}
+
+.list-links li img {
+    width: 100%;
+}
+
+.list-links li p {
+    margin: 10px;
+    font-size: 16px;
+    color: white;
+}
+
+.list-links li a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.list-links li a:hover {
+    background: #47494f;
+}
+
+/*しゃれた企業理念*/
+.new-philosophy {
+    text-align: center;
+    margin: auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    margin: 1rem auto;
+    padding: 3rem 1rem; /* 全体に余白を追加 */
+    border-radius: 8px;
+}
+
+.new-philosophy-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2列グリッド */
+    grid-template-areas:
+        "center center"
+        "left right";
+    column-gap: 150px; /* 横方向の間隔を広げる */
+    justify-content: center; /* グリッド全体を中央揃え */
+}
+
+
+.philosophy-box {
+    position: relative;
+    width: 375px;
+    height: 375px;
+    column-gap: 30;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color:black;
+    padding-top: 10px
+}
+
+.philosophy-content {
+    position: relative;
+    width: 80%;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.invisual-space{
+	height: 15px;
+	width: 100%;
+}
+
+.philosophy-content1 h4,.philosophy-content2 h4,.philosophy-content3 h4 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    color: #007bff;
+}
+
+.philosophy-content2 h4{
+	color: red;
+}
+
+.philosophy-content3 h4{
+	color: slateblue;
+}
+
+.philosophy-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/*査定ボタン*/
+.line-service{
+	margin-top: 50px;
+	width: 80%;
+}
+
+
+
+#assesment-link {
+    text-align: center;
+    margin: 50px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* おしゃれなグラデーション背景 */
+    border-radius: 10px;
+}
+
+/* ボタンスタイル */
+.assesment-button {
+    display: inline-block;
+    padding: 22px 40px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    background: linear-gradient(90deg, #4facfe, #00f2fe); /* おしゃれなグラデーション */
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* ボタンホバーエフェクト */
+.assesment-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+}
+
+/* --- お問い合わせセクション --- */
+.contact {
+    display: flex;
+    flex-direction: column; /* 子要素を縦に並べる */
+    align-items: center; /* 子要素を中央揃え */
+    text-align: center;
+    padding: 3rem 1rem; /* 内側余白 */
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef); /* グラデーション背景 */
+    border-radius: 10px; /* 角を丸く */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 軽いシャドウ */
+    max-width: 1200px;
+    margin: 0 auto; /* セクション全体を中央揃え */
+}
+
+.contact p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+/* --- 問い合わせ方法のカード --- */
+.contact-methods {
+    display: flex;
+    flex-wrap: wrap; /* カードが横幅を超えた場合折り返す */
+    justify-content: center; /* 子要素を中央揃え */
+    gap: 40px; /* カード同士の間隔 */
+    max-width: 1200px;
+}
+
+.contact-method {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 軽いシャドウ */
+    padding: 1.5rem; /* 内側余白 */
+    text-align: center; /* テキストを中央揃え */
+    max-width: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* ホバー時のアニメーション */
+}
+
+.contact-method:hover {
+    transform: translateY(-5px); /* ホバー時の持ち上げ効果 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* シャドウの強調 */
+}
+
+.contact-method h3 {
+    font-size: clamp(1rem, 4vw, 1.3rem); /* 最小1rem, 最大1.3rem, 中間は画面幅4% */
+    color: #007bff;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+/* --- ボタンスタイル --- */
+.contact-method .button {
+    display: inline-block; /* ボタンをインラインブロックに設定 */
+    width: 150px; /* ボタンの横幅 */
+    height: 50px; /* ボタンの高さ */
+    line-height: 50px; /* テキストの垂直方向の中央揃え */
+    text-align: center; /* テキストの水平方向の中央揃え */
+    font-size: 1rem; /* フォントサイズ */
+    font-weight: bold; /* 太字 */
+    color: #fff; /* テキストの色 */
+    background-color: #007bff; /* 背景色 */
+    border: none; /* ボーダーを削除 */
+    border-radius: 5px; /* 角を丸く */
+    text-decoration: none; /* リンクの下線を削除 */
+    padding: 0 20px; /* ボタンの横方向の余白 */
+    transition: background-color 0.3s ease; /* 背景色のアニメーション */
+}
+
+.contact-method .button:hover {
+    background-color: rgb(0, 0, 64); /* ホバー時の背景色変更 */
+}
+
+
+/* フッター */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+/* スマホ用のスタイル */
+@media (max-width: 768px) {
+    /* ヘッダー */
+    .header {
+        padding: 0.4rem 1rem;
+        flex-direction: column; /* 縦に配置 */
+    }
+    
+     .hero {
+        height: auto; /* 高さを可変に */
+        padding: 7rem 0.8rem;
+    }
+    
+    .hero-bg {
+    	position: absolute;
+    	padding-top: 70px;
+    	top: 0;
+    	left: 0;
+    	width: 100%;
+    	height: 100%;
+    	object-fit: cover; /* 画像がセクション全体に収まる */
+    	z-index: 1;
+    	opacity: 0.5; /* 背景を暗くするための透明度 */
+	}
+
+	.hero h1,
+	.hero p {
+		font-weight: bold;
+    	position: relative;
+    	z-index: 2;
+    	margin-bottom:0;
+	}
+
+	.hero h1 {
+		margin-top: 100px;
+    	font-size: 2.2rem;
+    	font-weight:bold;
+    	color: black;
+	}
+
+	.hero p {
+		margin-top: 20px;
+    	font-size: 1.4rem;
+    	color: black;
+	}
+
+
+    
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #333;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar.active {
+        display: flex; /* ハンバーガーメニューで表示 */
+    }
+
+    .hamburger {
+        display: flex; /* ハンバーガーボタンを表示 */
+    }
+
+    .logo {
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    .navbar ul {
+        flex-direction: column; /* 縦に並べる */
+        align-items: center;
+        gap: 10px;
+    }
+
+    .navbar li {
+        margin-left: 0;
+    }
+
+    /* ヒーローセクション */
+    section {
+        padding: 1rem;
+    }
+
+    section h2 {
+        font-size: 1.8rem ;
+    }
+
+    section h3 {
+        font-size: 1.1rem;
+    }
+
+    /* 会社概要のテーブル */
+    table {
+        font-size: 0.9rem;
+        width: 90% !important;
+    }
+
+
+    th, td {
+        padding: 0.5rem;
+        word-break: break-word; /* 内容を折り返す */
+    }
+
+    /* 新企業理念セクション */
+    
+    .new-philosophy-item {
+        grid-template-columns: 1fr; /* 1列表示 */
+        grid-template-areas:
+            "center"
+            "left"
+            "right";
+        row-gap: 10px;
+    }
+   
+	.philosophy-content {
+    	position: relative;
+    	width: 70%;
+    	padding: 0rem;
+    	border-radius: 8px;
+    	text-align: center;
+	}
+	
+    .philosophy-box {
+        width: 270px; /* 幅を100%に */
+        height: 270px; /* 高さ可変 */
+        margin: auto;
+    }
+    
+    .philosophy-content1 h4,.philosophy-content2 h4,.philosophy-content3 h4 {
+    	font-size: 1.05rem;
+    	font-weight: bold;
+    	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    	
+	}
+
+	.philosophy-content p {
+    	font-size: 0.7rem;
+    	line-height: 1.2;
+    	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	}
+
+    /* 関連リンク */
+    .list-links {
+        flex-direction: column; /* 縦に並べる */
+        gap: 10px; /* 間隔を調整 */
+    }
+    
+    .company-links {
+    text-align: center;
+    margin: 1rem auto;
+    padding: 3rem 1rem; /* セクションの内側余白 */
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef); /* グラデーション背景 */
+}
+
+	.company-links h2 {
+    	margin-bottom: 20px;
+	}
+
+	.company-links .company-name {
+    	font-weight: bold !important;
+    	font-size: 18px;
+	}
+
+	.list-links li p {
+    	margin: 10px;
+    	font-size: 13px;
+    	color: white;
+	}
+
+    .list-links li {
+        width: 80%; /* 幅を100%に */
+        margin: auto;
+    }
+
+	.list-links li div{
+		width: 80%;
+		margin: auto;
+		aspect-ratio: 1 / 1; /* 横:縦の比率を1:1（正方形）に設定 */
+		display: grid;
+    	place-items: center; /* 水平・垂直の両方向で中央揃え */
+	}
+
+	.list-links li img {
+    	width: 100%;
+	}
+
+	/* ボタンスタイル */
+	.line-service h2{
+		font-size: 1.3rem;
+	}
+	
+	.assesment-button {
+    	display: inline-block;
+    	padding: 15px 30px;
+    	font-size: 1.3rem;
+    	font-weight: bold;
+    	color: #fff;
+    	text-decoration: none;
+    	background: linear-gradient(90deg, #4facfe, #00f2fe); /* おしゃれなグラデーション */
+    	border-radius: 50px;
+    	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    	transition: all 0.3s ease-in-out;
+	}
+    /* お問い合わせ */
+    .contact-methods {
+        flex-direction: column; /* 縦に並べる */
+        gap: 20px;
+    }
+
+    .contact-method {
+        max-width: 100%; /* 幅を親要素に合わせる */
+    }
+
+    /* フッター */
+    .footer {
+        font-size: 0.6rem;
+        padding: 0.5rem 1rem;
+    }
+}
